@@ -1,4 +1,4 @@
-require 'sinatra'
+require 'sinatra/base'
 require 'sysrandom'
 require_relative './lib/Player'
 require_relative './lib/game'
@@ -33,4 +33,6 @@ class BattleApp < Sinatra::Base
     $game.switch_turns
     redirect('/play')
   end
+
+  run! if app_file == $0
 end
