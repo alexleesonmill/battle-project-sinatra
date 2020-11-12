@@ -17,6 +17,17 @@ describe Game do
     expect(game.player_2).to eq chris
   end
 
+  it 'starts as player 1' do
+    expect(game.current_turn).to eq alex
+  end
+
+  describe '#switch_turns' do
+    it 'switches the turn' do
+      game.switch_turns
+      expect(game.current_turn).to eq chris
+    end
+  end
+
   #   it 'does 10 damage' do
   #     expect { alex.attack(chris) }.to change { chris.health }.by(-10)
   #   end
